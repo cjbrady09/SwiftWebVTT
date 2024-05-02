@@ -18,7 +18,7 @@ internal class CustomScanner {
     @discardableResult
     func scanUpToCharacters(from set: CharacterSet, thenSkip skipCount: Int = 0) -> String? {
         let string = scanner.scanUpToCharacters(from: set)
-        if string != nil, skipCount > 0 { skip(skipCount) }
+        if string != nil, skipCount > 0, !isAtEnd { skip(skipCount) }
         return string
     }
     
